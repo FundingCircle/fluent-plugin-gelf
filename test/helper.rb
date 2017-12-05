@@ -11,9 +11,9 @@ Test::Unit::TestCase.extend(Fluent::Test::Helpers)
 
 def fixtures
   path = File.expand_path("../fixtures", __FILE__)
-  all_fixure_files = Dir["#{path}/*.json"]
+  all_fixture_files = Dir["#{path}/*.json"]
   all_fixtures = {}
-  all_fixure_files.each do |file|
+  all_fixture_files.each do |file|
     all_fixtures[File.basename(file)] = JSON.parse(File.read(file))
   end
   all_fixtures
