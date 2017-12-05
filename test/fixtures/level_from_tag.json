@@ -1,0 +1,23 @@
+{
+  "event": {
+    "tag": "fluent.warn",
+    "time": "2017-12-03 21:10:08.558Z UTC",
+    "record": {
+      "retry_time": 0,
+      "next_retry_seconds": "2017-12-04 22:56:27 +0000",
+      "chunk": "55f8ba0c48815f9a61ede8f6c2a68208",
+      "error": "#<Errno::ECONNREFUSED: Connection refused...",
+      "message": "failed to flush the buffer..."
+    }
+  },
+  "expected": {
+    "timestamp": 1512335408.558,
+    "_fluentd_tag": "fluent.warn",
+    "_retry_time": 0,
+    "_next_retry_seconds": "2017-12-04 22:56:27 +0000",
+    "_chunk": "55f8ba0c48815f9a61ede8f6c2a68208",
+    "_error": "#<Errno::ECONNREFUSED: Connection refused...",
+    "short_message": "failed to flush the buffer...",
+    "level": 4
+  }
+}

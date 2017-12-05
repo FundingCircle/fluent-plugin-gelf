@@ -1,0 +1,53 @@
+{
+  "event": {
+    "tag": "journald.log",
+    "time": "2017-12-03 21:10:08.558Z UTC",
+    "record": {
+      "uid": "0",
+      "gid": "0",
+      "cap_effective": "1fffffffff",
+      "systemd_slice": "system.slice",
+      "boot_id": "652998235194436283ff15d225e268cf",
+      "machine_id": "d1f142097d497f24c021d7de9b81cab4",
+      "hostname": "mesosslave-private-015e1a3477fa81e5e",
+      "transport": "syslog",
+      "priority": "3",
+      "syslog_facility": "1",
+      "syslog_identifier": "mesos-slave",
+      "syslog_pid": "3445",
+      "pid": "3596",
+      "comm": "logger",
+      "exe": "/usr/bin/logger",
+      "cmdline": "logger -p user.err -t mesos-slave[3445]",
+      "systemd_cgroup": "/system.slice/mesos-slave.service",
+      "systemd_unit": "mesos-slave.service",
+      "selinux_context": "system_u:system_r:unconfined_service_t:s0",
+      "message": "I1204 10:25:20.448935  3677 slave.cpp:5920] Current disk usage 5.31%. Max allowed age: 4.234456934750000mins",
+      "source_realtime_timestamp": "1512383120449042"
+    }
+  },
+  "expected": {
+    "timestamp": 1512383120.449,
+    "_fluentd_tag": "journald.log",
+    "_uid": "0",
+    "_gid": "0",
+    "_cap_effective": "1fffffffff",
+    "_systemd_slice": "system.slice",
+    "_boot_id": "652998235194436283ff15d225e268cf",
+    "_machine_id": "d1f142097d497f24c021d7de9b81cab4",
+    "host": "mesosslave-private-015e1a3477fa81e5e",
+    "_transport": "syslog",
+    "level": 3,
+    "facility": "user",
+    "_syslog_identifier": "mesos-slave",
+    "_syslog_pid": "3445",
+    "_pid": "3596",
+    "_comm": "logger",
+    "_exe": "/usr/bin/logger",
+    "_cmdline": "logger -p user.err -t mesos-slave[3445]",
+    "_systemd_cgroup": "/system.slice/mesos-slave.service",
+    "_systemd_unit": "mesos-slave.service",
+    "_selinux_context": "system_u:system_r:unconfined_service_t:s0",
+    "short_message": "I1204 10:25:20.448935  3677 slave.cpp:5920] Current disk usage 5.31%. Max allowed age: 4.234456934750000mins"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "event": {
+    "tag": "docker.312fe8f61472",
+    "comment": "no msec from docker: https://github.com/moby/moby/issues/17181#issuecomment-345594658",
+    "time": 1512424624,
+    "record": {
+      "container_id": "312fe8f61472d866831525403681ff5d012352ca67b43c685a4d7b4efb60e60d",
+      "container_name": "/mesos-61cbfd86-74f0-428c-9515-2d36e74b2dc5",
+      "source": "stderr",
+      "log": "2017/12/04 11:02:06 http: TLS handshake error from 10.42.9.114:33880: EOF",
+      "mesos_framework": "marathon",
+      "app": "vault-gatekeeper-mesos",
+      "mesos_task_id": "vault-gatekeeper-mesos.e6848c5f-d5c1-11e7-a79a-02a64f45f7a2",
+      "host": "mesosslave-private-06a58a3ce10a783cf",
+      "msec": "229"
+    }
+  },
+  "expected": {
+    "timestamp": 1512424624.229,
+    "_fluentd_tag": "docker.312fe8f61472",
+    "_container_id": "312fe8f61472d866831525403681ff5d012352ca67b43c685a4d7b4efb60e60d",
+    "_container_name": "/mesos-61cbfd86-74f0-428c-9515-2d36e74b2dc5",
+    "_source": "stderr",
+    "_mesos_framework": "marathon",
+    "_app": "vault-gatekeeper-mesos",
+    "_mesos_task_id": "vault-gatekeeper-mesos.e6848c5f-d5c1-11e7-a79a-02a64f45f7a2",
+    "host": "mesosslave-private-06a58a3ce10a783cf",
+    "short_message": "2017/12/04 11:02:06 http: TLS handshake error from 10.42.9.114:33880: EOF"
+  }
+}
