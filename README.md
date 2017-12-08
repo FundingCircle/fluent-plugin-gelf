@@ -1,4 +1,4 @@
-# fluent-plugin-gelf2
+# fluent-plugin-gelf
 [![CircleCI](https://circleci.com/gh/FundingCircle/fluent-plugin-gelf2/tree/master.svg?style=svg&circle-token=d781ef54862db51be146a2a2ad7aa9d783bb177a)](https://circleci.com/gh/FundingCircle/fluent-plugin-gelf2/tree/master)
 
 [Fluentd](https://fluentd.org/) output plugin to do something.
@@ -10,7 +10,7 @@ TODO: write description for you plugin.
 ### RubyGems
 
 ```
-$ gem install fluent-plugin-gelf2
+$ gem install fluent-plugin-gelf
 ```
 
 ### Bundler
@@ -18,7 +18,7 @@ $ gem install fluent-plugin-gelf2
 Add following line to your Gemfile:
 
 ```ruby
-gem "fluent-plugin-gelf2"
+gem "fluent-plugin-gelf"
 ```
 
 And then execute:
@@ -32,7 +32,7 @@ $ bundle
 You can generate configuration template:
 
 ```
-$ fluent-plugin-config-format output gelf2
+$ fluent-plugin-config-format output gelf
 ```
 
 You can copy and paste generated documents here.

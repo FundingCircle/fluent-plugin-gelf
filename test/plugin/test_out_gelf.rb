@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 require "helper"
-require "fluent/plugin/out_gelf2.rb"
+require "fluent/plugin/out_gelf.rb"
 require "test/unit/rr"
 
-class Gelf2OutputTest < Test::Unit::TestCase
+class GelfOutputTest < Test::Unit::TestCase
   CONFIG = %(
     host localhost
   )
@@ -22,7 +22,7 @@ class Gelf2OutputTest < Test::Unit::TestCase
   private
 
   def create_driver(conf)
-    Fluent::Test::Driver::Output.new(Fluent::Plugin::Gelf2Output).configure(conf)
+    Fluent::Test::Driver::Output.new(Fluent::Plugin::GelfOutput).configure(conf)
   end
 
   test "test config" do
@@ -47,8 +47,8 @@ class Gelf2OutputTest < Test::Unit::TestCase
       stub(@stubbed_tcp).close
       @d.run(default_tag: v["event"]["tag"]) do
         time = v["event"]["time"]
-        parsed_timet = time.is_a?(Integer) ? time : event_time(time)
-        @d.feed(parsed_timet, v["event"]["record"])
+        parsed_time = time.is_a?(Integer) ? time : event_time(time)
+        @d.feed(parsed_time, v["event"]["record"])
       end
       assert_equal [v["expected"].to_msgpack], @d.formatted
     end

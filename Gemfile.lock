@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fluent-plugin-gelf2 (0.1.0)
+    fluent-plugin-gelf (0.1.0)
       fluentd (>= 0.14.10, < 2)
 
 GEM
@@ -9,7 +9,7 @@ GEM
   specs:
     ast (2.3.0)
     cool.io (1.5.3)
-    fluentd (0.14.25)
+    fluentd (1.0.0)
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.7.0)
       msgpack (>= 0.7.0, < 2.0.0)
@@ -21,7 +21,7 @@ GEM
       tzinfo-data (~> 1.0)
       yajl-ruby (~> 1.0)
     http_parser.rb (0.6.0)
-    msgpack (1.1.0)
+    msgpack (1.2.0)
     parallel (1.12.0)
     parser (2.4.0.2)
       ast (~> 2.3)
@@ -62,7 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.14)
-  fluent-plugin-gelf2!
+  fluent-plugin-gelf!
   rake (~> 12.0)
   rubocop (~> 0.50.0)
   test-unit (~> 3.0)
