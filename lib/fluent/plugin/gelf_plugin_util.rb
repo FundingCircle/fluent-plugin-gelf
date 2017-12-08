@@ -2,6 +2,35 @@
 
 module Fluent
   module GelfPluginUtil
+    SYSLOG_FACILITY = {
+      "0" => "kern",
+      "1" => "user",
+      "2" => "mail",
+      "3" => "daemon",
+      "4" => "auth",
+      "5" => "syslog",
+      "6" => "lpr",
+      "7" => "news",
+      "8" => "uucp",
+      "9" => "cron",
+      "10" => "authpriv",
+      "16" => "local0",
+      "17" => "local1",
+      "18" => "local2",
+      "19" => "local3",
+      "20" => "local4",
+      "21" => "local5",
+      "22" => "local6",
+      "23" => "local7",
+    }.freeze
+
+    LEVEL_MAPPING = {
+      "error" => 3,
+      "warn" => 4,
+      "info" => 6,
+      "debug" => 7,
+    }.freeze
+
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
     def make_gelfentry(tag, time, record)
       gelfentry = {}
