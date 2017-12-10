@@ -27,7 +27,7 @@ module Fluent
       end
 
       def format(tag, time, record)
-        make_gelfentry(tag, time, record)
+        make_gelfentry(tag, time, record).to_msgpack
       end
 
       def write(chunk) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength

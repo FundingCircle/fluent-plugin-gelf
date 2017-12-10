@@ -78,7 +78,7 @@ module Fluent
         gelfentry["level"] = LEVEL_MAPPING[level] if level
       end
 
-      gelfentry.to_msgpack
+      gelfentry
     end
   end
 end

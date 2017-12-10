@@ -10,7 +10,7 @@ module Fluent
       include Fluent::GelfPluginUtil
 
       def format(tag, time, record)
-        make_gelfentry(tag, time, record)
+        make_gelfentry(tag, time, record).to_json
       end
     end
   end
