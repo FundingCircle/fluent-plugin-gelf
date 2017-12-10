@@ -74,7 +74,7 @@ module Fluent
       end
 
       if gelfentry["level"].nil?
-        level = LEVEL_MAPPING.keys.select { |k| tag =~ /\.#{k}/ }.first
+        level = LEVEL_MAPPING.keys.find { |k| tag =~ /\.#{k}/ }
         gelfentry["level"] = LEVEL_MAPPING[level] if level
       end
 
