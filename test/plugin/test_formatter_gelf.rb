@@ -20,7 +20,7 @@ class GelfFormatterTest < Test::Unit::TestCase
       time = v["event"]["time"]
       parsed_time = time.is_a?(Integer) ? time : event_time(time)
       formatted = @d.instance.format(v["event"]["tag"], parsed_time, v["event"]["record"])
-      assert_equal v["expected"].to_msgpack, formatted
+      assert_equal v["expected"].to_json, formatted
     end
   end
 end
