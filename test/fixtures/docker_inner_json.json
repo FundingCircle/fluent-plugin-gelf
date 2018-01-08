@@ -28,6 +28,7 @@
     "_mesos_framework": "marathon",
     "_app": "other",
     "_mesos_task_id": "other.4b859ca4-d6e2-11e7-a79a-02a64f45f7a2",
-    "short_message": "{\"foo\":\"bar\",\"bar\":\"baz\"}"
+    "short_message": "{\"foo\":\"bar\",\"bar\":\"baz\"}",
+    "level": 6
   }
 }

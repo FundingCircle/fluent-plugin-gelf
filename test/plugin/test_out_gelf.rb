@@ -10,8 +10,8 @@ class GelfOutputTest < Test::Unit::TestCase
   )
 
   MULTI_RECORD_WRITE = "{\"timestamp\":1512335408.558,\"_fluentd_tag\":\"test\",\
-\"_foo\":\"bar\",\"short_message\":\"(no message)\"}\u0000{\"timestamp\":1512335409.123,\
-\"_fluentd_tag\":\"test\",\"_bar\":\"baz\",\"short_message\":\"(no message)\"}\u0000"
+\"_foo\":\"bar\",\"short_message\":\"(no message)\",\"level\":6}\u0000{\"timestamp\":1512335409.123,\
+\"_fluentd_tag\":\"test\",\"_bar\":\"baz\",\"short_message\":\"(no message)\",\"level\":6}\u0000"
 
   setup do
     Fluent::Test.setup

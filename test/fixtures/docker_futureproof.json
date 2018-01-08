@@ -26,6 +26,7 @@
     "_mesos_task_id": "vault-gatekeeper-mesos.e6848c5f-d5c1-11e7-a79a-02a64f45f7a2",
     "host": "mesosslave-private-06a58a3ce10a783cf",
     "_msec": "229",
-    "short_message": "2017/12/04 11:02:06 http: TLS handshake error from 10.42.9.114:33880: EOF"
+    "short_message": "2017/12/04 11:02:06 http: TLS handshake error from 10.42.9.114:33880: EOF",
+    "level": 6
   }
 }
