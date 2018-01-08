@@ -51,11 +51,18 @@ module Fluent
           else
             gelfentry["_msec"] = v
           end
+        when "level"
+          gelfentry["level"] = if v.is_a?(Integer)
+                                 v
+                               else
+                                 level = LEVEL_MAPPING.keys.find { |l| v.downcase =~ /#{l}/ }
+                                 level.nil? ? v : LEVEL_MAPPING[level]
+                               end
         when "source_realtime_timestamp" then gelfentry["timestamp"] = (v.to_f / 1_000_000).round(3)
         when "host", "hostname" then gelfentry["host"] = v.to_s
         when "priority" then gelfentry["level"] = v.to_i
         when "syslog_facility" then gelfentry["facility"] = SYSLOG_FACILITY[v]
-        when "short_message", "version", "full_message", "facility", "file", "line", "level" then gelfentry[k] = v
+        when "short_message", "version", "full_message", "facility", "file", "line" then gelfentry[k] = v
         else
           k.to_s.start_with?("_") ? gelfentry[k] = v : gelfentry["_#{k}"] = v
         end
@@ -74,8 +81,8 @@ module Fluent
       end
 
       if gelfentry["level"].nil?
-        level = LEVEL_MAPPING.keys.find { |k| tag =~ /\.#{k}/ }
-        gelfentry["level"] = LEVEL_MAPPING[level] if level
+        level = LEVEL_MAPPING.keys.find { |k| tag.downcase =~ /\.#{k}/ }
+        gelfentry["level"] = level.nil? ? 6 : LEVEL_MAPPING[level]
       end
 
       gelfentry
