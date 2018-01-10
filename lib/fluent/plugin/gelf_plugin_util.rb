@@ -38,6 +38,7 @@ module Fluent
       return record unless record[key]
       json = Oj.load(record[key].strip)
       json["host"] = record["host"] # preserve host
+      record.delete(key)
       record.merge(json)
     rescue Oj::ParseError
       record
@@ -99,8 +100,6 @@ module Fluent
                                      else
                                        "(no message)"
                                      end
-      else
-        gelfentry.delete("_log")
       end
 
       if gelfentry["level"].nil?
