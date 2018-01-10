@@ -1,0 +1,52 @@
+{
+  "event": {
+    "tag": "journald.log",
+    "time": "2018-01-09 15:16:47.693Z UTC",
+    "record": {
+      "host": "mesosslave-private-0690bffd1e39d7462",
+      "transport": "stdout",
+      "priority": "6",
+      "syslog_facility": "3",
+      "systemd_slice": "system.slice",
+      "selinux_context": "system_u:system_r:container_runtime_t:s0",
+      "boot_id": "a83a6f2a9aa545d18188387fcff0dea9",
+      "machine_id": "f073c429a7456b53ec3e2c53460c5c8f",
+      "cap_effective": "1fffffffff",
+      "syslog_identifier": "kafka-connect-server-kafka-connect-clj",
+      "pid": "1158",
+      "uid": "0",
+      "gid": "0",
+      "comm": "dockerd",
+      "exe": "/usr/bin/dockerd",
+      "cmdline": "/usr/bin/dockerd --exec-opt native.cgroupdriver=cgroupfs --log-opt tag=docker.{{.ID}} --log-opt fluentd-address=unix:///var/run/td-agent/td-agent.sock --log-driver=fluentd --log-opt fluentd-async-connect=true --dns=10.42.8.190",
+      "systemd_cgroup": "/system.slice/docker.service",
+      "systemd_unit": "docker.service",
+      "message": "{\"timestamp\":\"2018-01-09T15:16:47.692+00:00\",\"logger\":\"kafka.connect.SinkTask\",\"level\":\"DEBUG\",\"thread\":\"pool-1-thread-30\",\"message\":\"put 0 records to sink\"}"
+    }
+  },
+  "expected": {
+    "timestamp": 1515511007.692,
+    "_fluentd_tag": "journald.log",
+    "host": "mesosslave-private-0690bffd1e39d7462",
+    "_transport": "stdout",
+    "level": 7,
+    "facility": "daemon",
+    "_systemd_slice": "system.slice",
+    "_selinux_context": "system_u:system_r:container_runtime_t:s0",
+    "_boot_id": "a83a6f2a9aa545d18188387fcff0dea9",
+    "_machine_id": "f073c429a7456b53ec3e2c53460c5c8f",
+    "_cap_effective": "1fffffffff",
+    "_syslog_identifier": "kafka-connect-server-kafka-connect-clj",
+    "_pid": "1158",
+    "_uid": "0",
+    "_gid": "0",
+    "_comm": "dockerd",
+    "_exe": "/usr/bin/dockerd",
+    "_cmdline": "/usr/bin/dockerd --exec-opt native.cgroupdriver=cgroupfs --log-opt tag=docker.{{.ID}} --log-opt fluentd-address=unix:///var/run/td-agent/td-agent.sock --log-driver=fluentd --log-opt fluentd-async-connect=true --dns=10.42.8.190",
+    "_systemd_cgroup": "/system.slice/docker.service",
+    "_systemd_unit": "docker.service",
+    "_logger": "kafka.connect.SinkTask",
+    "_thread": "pool-1-thread-30",
+    "short_message": "put 0 records to sink"
+  }
+}

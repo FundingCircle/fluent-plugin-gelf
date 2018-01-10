@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "oj"
+require "date"
+
 module Fluent
   module GelfPluginUtil
     SYSLOG_FACILITY = {
@@ -31,8 +34,19 @@ module Fluent
       "debug" => 7,
     }.freeze
 
+    def merge_inner_json(record, key)
+      return record unless record[key]
+      json = Oj.load(record[key].strip)
+      json["host"] = record["host"] # preserve host
+      record.merge(json)
+    rescue Oj::ParseError
+      record
+    end
+
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength, Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
     def make_gelfentry(tag, time, record)
+      record = merge_inner_json(record, "message")
+      record = merge_inner_json(record, "log")
       gelfentry = {}
       gelfentry["timestamp"] = if defined?(Fluent::EventTime) && time.is_a?(Fluent::EventTime)
                                  time.sec + (time.nsec.to_f / 1_000_000_000).round(3)
@@ -42,9 +56,18 @@ module Fluent
 
       gelfentry["_fluentd_tag"] = tag
 
-      record.each_pair do |k, v|
+      record.each_pair do |k, v| # rubocop:disable Metrics/BlockLength
         case k
-        when "timestamp" then gelfentry["timestamp"] = v
+        when "timestamp"
+          gelfentry["timestamp"] = if v.is_a?(Integer) || v.is_a?(Float)
+                                     v
+                                   else
+                                     begin
+                                       (DateTime.parse(v).strftime("%Q").to_f / 1_000).round(3)
+                                     rescue ArgumentError
+                                       v
+                                     end
+                                   end
         when "msec" then
           if time.is_a?(Integer) && record["timestamp"].nil?
             gelfentry["timestamp"] = "#{time}.#{v}".to_f

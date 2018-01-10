@@ -7,8 +7,6 @@
       "container_id": "d14490734a2f217609123a06e44df860ac573c76882a7a27e98c1a8e29d32664",
       "container_name": "/mesos-10d4a50f-e134-4538-b390-3051c50c431d",
       "source": "stdout",
-      "foo": "bar",
-      "bar": "baz",
       "log": "{\"foo\":\"bar\",\"bar\":\"baz\"}",
       "mesos_framework": "marathon",
       "app": "other",
@@ -23,11 +21,11 @@
     "_container_id": "d14490734a2f217609123a06e44df860ac573c76882a7a27e98c1a8e29d32664",
     "_container_name": "/mesos-10d4a50f-e134-4538-b390-3051c50c431d",
     "_source": "stdout",
-    "_foo": "bar",
-    "_bar": "baz",
     "_mesos_framework": "marathon",
     "_app": "other",
     "_mesos_task_id": "other.4b859ca4-d6e2-11e7-a79a-02a64f45f7a2",
+    "_foo": "bar",
+    "_bar": "baz",
     "short_message": "{\"foo\":\"bar\",\"bar\":\"baz\"}",
     "level": 6
   }
