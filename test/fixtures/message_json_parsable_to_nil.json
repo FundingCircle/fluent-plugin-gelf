@@ -1,0 +1,50 @@
+{
+  "event": {
+    "tag": "journald.log",
+    "time": "2017-12-03 21:10:08.558Z UTC",
+    "record": {
+      "host": "mesosslave-private-06a58a3ce10a783cf",
+      "transport": "stdout",
+      "priority": "6",
+      "syslog_facility": "3",
+      "systemd_slice": "system.slice",
+      "selinux_context": "system_u:system_r:init_t:s0",
+      "boot_id": "9b18b8b74048480aa9f6fc268c51a96d",
+      "machine_id": "d1f142097d497f24c021d7de9b81cab4",
+      "cap_effective": "0",
+      "syslog_identifier": "consul-start.sh",
+      "pid": "3388",
+      "uid": "997",
+      "gid": "994",
+      "comm": "consul",
+      "exe": "/usr/local/bin/consul",
+      "cmdline": "/usr/local/bin/consul agent -config-dir /usr/local/etc/consul -protocol 3 -bind 10.42.9.114 -datacenter eu-central-1 -retry-join provider=aws tag_key=Consul_environment tag_value=unstable -recursor localhost:53 -pid-file /run/consul/consul.pid -enable-script-checks -raft-protocol 2",
+      "systemd_cgroup": "/system.slice/consul.service",
+      "systemd_unit": "consul.service",
+      "message": " // Clearing the cache for the prod environment with debug false"
+    }
+  },
+  "expected": {
+    "timestamp": 1512335408.558,
+    "_fluentd_tag": "journald.log",
+    "host": "mesosslave-private-06a58a3ce10a783cf",
+    "_transport": "stdout",
+    "level": 6,
+    "facility": "daemon",
+    "_systemd_slice": "system.slice",
+    "_selinux_context": "system_u:system_r:init_t:s0",
+    "_boot_id": "9b18b8b74048480aa9f6fc268c51a96d",
+    "_machine_id": "d1f142097d497f24c021d7de9b81cab4",
+    "_cap_effective": "0",
+    "_syslog_identifier": "consul-start.sh",
+    "_pid": "3388",
+    "_uid": "997",
+    "_gid": "994",
+    "_comm": "consul",
+    "_exe": "/usr/local/bin/consul",
+    "_cmdline": "/usr/local/bin/consul agent -config-dir /usr/local/etc/consul -protocol 3 -bind 10.42.9.114 -datacenter eu-central-1 -retry-join provider=aws tag_key=Consul_environment tag_value=unstable -recursor localhost:53 -pid-file /run/consul/consul.pid -enable-script-checks -raft-protocol 2",
+    "_systemd_cgroup": "/system.slice/consul.service",
+    "_systemd_unit": "consul.service",
+    "short_message": " // Clearing the cache for the prod environment with debug false"
+  }
+}
