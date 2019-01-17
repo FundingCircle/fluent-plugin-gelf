@@ -2,6 +2,7 @@
 
 require "fluent/plugin/formatter"
 require "fluent/plugin/gelf_plugin_util"
+require "yajl"
 
 module Fluent
   module Plugin
@@ -10,7 +11,7 @@ module Fluent
       include Fluent::GelfPluginUtil
 
       def format(tag, time, record)
-        make_gelfentry(tag, time, record).to_json
+        Yajl::Encoder.encode(make_gelfentry(tag, time, record))
       end
     end
   end
