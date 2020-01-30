@@ -60,7 +60,7 @@ module Fluent
 
       record.each_pair do |k, v| # rubocop:disable Metrics/BlockLength
         case k
-        when "timestamp"
+        when "timestamp", "time"
           gelfentry["timestamp"] = if v.is_a?(Integer) || v.is_a?(Float)
                                      v
                                    else
@@ -71,7 +71,7 @@ module Fluent
                                      end
                                    end
         when "msec" then
-          if time.is_a?(Integer) && record["timestamp"].nil?
+          if time.is_a?(Integer) && record["timestamp"].nil? && record["time"].nil?
             gelfentry["timestamp"] = "#{time}.#{v}".to_f
           else
             gelfentry["_msec"] = v

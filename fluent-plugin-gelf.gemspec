@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name    = "fluent-plugin-gelf"
-  spec.version = "0.2.2"
+  spec.version = "0.2.3"
   spec.authors = ["Funding Circle"]
   spec.email   = ["engineering@fundingcircle.com"]
 

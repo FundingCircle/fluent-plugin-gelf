@@ -1,0 +1,32 @@
+{
+  "event": {
+    "tag": "docker.d14490734a2f",
+    "time": 15123853321,
+    "record": {
+      "host": "mesosslave-private-06a58a3ce10a783cf",
+      "container_id": "d14490734a2f217609123a06e44df860ac573c76882a7a27e98c1a8e29d32664",
+      "container_name": "/mesos-10d4a50f-e134-4538-b390-3051c50c431d",
+      "source": "stdout",
+      "log": "{\"message\":\"foo\",\"bar\":\"baz\",\"time\":\"2020-01-29T16:17:43Z\"}",
+      "mesos_framework": "marathon",
+      "app": "other",
+      "mesos_task_id": "other.4b859ca4-d6e2-11e7-a79a-02a64f45f7a2",
+      "msec": "825"
+    }
+  },
+  "expected": {
+    "timestamp": 1580314663.0,
+    "_fluentd_tag": "docker.d14490734a2f",
+    "host": "mesosslave-private-06a58a3ce10a783cf",
+    "_container_id": "d14490734a2f217609123a06e44df860ac573c76882a7a27e98c1a8e29d32664",
+    "_container_name": "/mesos-10d4a50f-e134-4538-b390-3051c50c431d",
+    "_source": "stdout",
+    "_mesos_framework": "marathon",
+    "_app": "other",
+    "_mesos_task_id": "other.4b859ca4-d6e2-11e7-a79a-02a64f45f7a2",
+    "_msec": "825",
+    "_bar": "baz",
+    "short_message": "foo", 
+    "level": 6
+  }
+}
