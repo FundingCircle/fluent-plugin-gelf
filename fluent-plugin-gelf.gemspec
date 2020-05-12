@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "oj", "~> 3.3.10"
-  spec.add_development_dependency "bundler", "~> 1.14"
+  spec.add_development_dependency "bundler", "~> 2.1.4"
   spec.add_development_dependency "rake", "~> 12.0"
   spec.add_development_dependency "test-unit", "~> 3.0"
   spec.add_development_dependency "test-unit-rr", "~> 1.0.5"
