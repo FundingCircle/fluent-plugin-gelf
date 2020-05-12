@@ -37,8 +37,8 @@ $ fluent-plugin-config-format output gelf
 
 You can copy and paste generated documents here.
 
-## Copyright
+## Copyright and License
 
-* Copyright(c) 2017- Funding Circle Ltd
-* License
-  * Apache License, Version 2.0
+Copyright © 2017 Funding Circle Ltd.
+
+Licensed under the [BSD 3-Clause License](LICENSE).

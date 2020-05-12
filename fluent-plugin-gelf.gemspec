@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Graylog output plugin for Fluentd"
   spec.description   = "Convers fluentd log events into GELF format and sends it graylog"
-  spec.license       = "Apache-2.0"
+  spec.license       = "BSD-3-Clause"
 
   test_files, files  = `git ls-files -z`.split("\x0").partition do |f|
     f.match(%r{^(test|spec|features)/})
