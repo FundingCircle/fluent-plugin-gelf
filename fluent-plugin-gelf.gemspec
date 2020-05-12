@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name    = "fluent-plugin-gelf"
   spec.version = "0.2.4"
   spec.authors = ["Funding Circle"]
-  spec.email   = ["engineering@fundingcircle.com"]
+  spec.email   = ["engineering+fluent-plugin-gelf@fundingcircle.com"]
 
-  spec.summary       = "Graylog output plugin for Fluentd"
-  spec.description   = "Convers fluentd log events into GELF format and sends it graylog"
+  spec.summary       = "Graylog output plugin for fluentd"
+  spec.description   = "Converts fluentd log events into GELF format and sends them to Graylog"
   spec.license       = "BSD-3-Clause"
 
   test_files, files  = `git ls-files -z`.split("\x0").partition do |f|
