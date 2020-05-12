@@ -47,6 +47,12 @@ The hostname of your Graylog cluster.
 
 The TCP port of your Graylog cluster. Default value: `12201`.
 
+## Releases
+
+The CircleCI build for this project manages gem releases to RubyGems. To release
+a new version of this gem, create a tag for the version and push it. It will
+then be built and deployed automatically.
+
 ## Copyright and License
 
 Copyright © 2017 Funding Circle Ltd.
