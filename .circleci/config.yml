@@ -19,6 +19,23 @@ executors:
       - image: circleci/ruby:<< parameters.version >>
     working_directory: ~/fluent-plugin-gelf
 jobs:
+  publish:
+    executor: ruby
+    steps:
+      - checkout
+      - install_gems
+      - run:
+          name: Configure RubyGems API key
+          command: |
+            mkdir -p ~/.gem
+            echo ":rubygems_api_key: $RUBYGEMS_API_KEY" >  ~/.gem/credentials
+            chmod 0600 ~/.gem/credentials
+      - run:
+          name: Build gem
+          command: bundle exec rake build --trace
+      - run:
+          name: Release gem
+          command: bundle exec rake release:rubygem_push --trace
   rubocop:
     executor: ruby
     steps:
@@ -41,3 +58,13 @@ workflows:
     jobs:
       - rubocop
       - test
+      - publish:
+          context: org-rubygems
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v\d{1,2}\.\d{1,2}\.\d{1,2}.*/
+          requires:
+            - rubocop
+            - test
