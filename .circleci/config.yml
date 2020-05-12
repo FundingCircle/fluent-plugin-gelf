@@ -56,8 +56,14 @@ jobs:
 workflows:
   test:
     jobs:
-      - rubocop
-      - test
+      - rubocop:
+          filters:
+            tags:
+              only: /.*/
+      - test:
+          filters:
+            tags:
+              only: /.*/
       - publish:
           context: org-rubygems
           filters:
