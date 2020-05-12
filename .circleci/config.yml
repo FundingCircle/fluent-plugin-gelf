@@ -14,10 +14,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: fluent-plugin-gelf2-{{ checksum "Gemfile.lock" }}
+          key: fluent-plugin-gelf2-{{ checksum "fluent-plugin-gelf.gemspec" }}-{{ checksum "Gemfile" }}
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 --full-index
       - save_cache:
-          key: fluent-plugin-gelf2-{{ checksum "Gemfile.lock" }}
+          key: fluent-plugin-gelf2-{{ checksum "fluent-plugin-gelf.gemspec" }}-{{ checksum "Gemfile" }}
           paths:
             - vendor/bundle
       - run:
