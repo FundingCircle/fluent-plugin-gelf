@@ -1,4 +1,14 @@
 version: 2.1
+commands:
+  install_gems:
+    steps:
+      - restore_cache:
+          key: fluent-plugin-gelf2-{{ checksum "fluent-plugin-gelf.gemspec" }}-{{ checksum "Gemfile" }}
+      - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 --full-index
+      - save_cache:
+          key: fluent-plugin-gelf2-{{ checksum "fluent-plugin-gelf.gemspec" }}-{{ checksum "Gemfile" }}
+          paths:
+            - vendor/bundle
 executors:
   ruby:
     parameters:
@@ -9,22 +19,25 @@ executors:
       - image: circleci/ruby:<< parameters.version >>
     working_directory: ~/fluent-plugin-gelf
 jobs:
+  rubocop:
+    executor: ruby
+    steps:
+      - checkout
+      - install_gems
+      - run:
+          name: Run RuboCop
+          command: bundle exec rake rubocop --trace
   test:
     executor: ruby
     steps:
       - checkout
-      - restore_cache:
-          key: fluent-plugin-gelf2-{{ checksum "fluent-plugin-gelf.gemspec" }}-{{ checksum "Gemfile" }}
-      - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 --full-index
-      - save_cache:
-          key: fluent-plugin-gelf2-{{ checksum "fluent-plugin-gelf.gemspec" }}-{{ checksum "Gemfile" }}
-          paths:
-            - vendor/bundle
+      - install_gems
       - run:
-          name: run tests
-          command: bundle exec rake --trace
+          name: Run tests
+          command: bundle exec rake test --trace
 
 workflows:
   test:
     jobs:
+      - rubocop
       - test
