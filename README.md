@@ -43,7 +43,7 @@ This `gelf` plugin is for fluentd v1.0 or later.
 
 The hostname of your Graylog cluster.
 
-####o port (integer) (optional)
+#### port (integer) (optional)
 
 The TCP port of your Graylog cluster. Default value: `12201`.
 
