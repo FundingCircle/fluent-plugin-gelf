@@ -5,13 +5,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name    = "fluent-plugin-gelf"
-  spec.version = "0.2.3"
+  spec.version = "0.2.4"
   spec.authors = ["Funding Circle"]
-  spec.email   = ["engineering@fundingcircle.com"]
+  spec.email   = ["engineering+fluent-plugin-gelf@fundingcircle.com"]
 
-  spec.summary       = "Graylog output plugin for Fluentd"
-  spec.description   = "Convers fluentd log events into GELF format and sends it graylog"
-  spec.license       = "Apache-2.0"
+  spec.summary       = "Graylog output plugin for fluentd"
+  spec.description   = "Converts fluentd log events into GELF format and sends them to Graylog"
+  spec.license       = "BSD-3-Clause"
 
   test_files, files  = `git ls-files -z`.split("\x0").partition do |f|
     f.match(%r{^(test|spec|features)/})
@@ -22,8 +22,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "oj", "~> 3.3.10"
-  spec.add_development_dependency "bundler", "~> 1.14"
-  spec.add_development_dependency "rake", "~> 12.0"
+  spec.add_development_dependency "bundler", "~> 2.1.4"
+  spec.add_development_dependency "rake", ">= 12.3.3"
   spec.add_development_dependency "test-unit", "~> 3.0"
   spec.add_development_dependency "test-unit-rr", "~> 1.0.5"
   spec.add_development_dependency "rubocop", "~> 0.50.0"
