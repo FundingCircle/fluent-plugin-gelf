@@ -4,10 +4,11 @@ lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name    = "fluent-plugin-gelf"
-  spec.version = "0.2.4"
-  spec.authors = ["Funding Circle"]
-  spec.email   = ["engineering+fluent-plugin-gelf@fundingcircle.com"]
+  spec.name     = "fluent-plugin-gelf"
+  spec.version  = "0.2.4"
+  spec.authors  = ["Funding Circle"]
+  spec.email    = ["engineering+fluent-plugin-gelf@fundingcircle.com"]
+  spec.homepage = ["https://github.com/FundingCircle/fluent-plugin-gelf"]
 
   spec.summary       = "Graylog output plugin for fluentd"
   spec.description   = "Converts fluentd log events into GELF format and sends them to Graylog"
