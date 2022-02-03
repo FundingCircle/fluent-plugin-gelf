@@ -41,7 +41,7 @@ module Fluent
       json["host"] = record["host"] # preserve host
       record.delete(key)
       record.merge(json)
-    rescue Oj::ParseError
+    rescue Oj::ParseError, EncodingError, IndexError
       record
     end
 

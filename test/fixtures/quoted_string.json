@@ -1,0 +1,31 @@
+{
+  "event": {
+    "tag": "docker.9ee424d12013",
+    "time": "2022-02-03 16:17:23.034547719",
+    "record": {
+      "container_id": "9ee424d120137232b53bbaa678097b71e50e69de148e2ee4b77a94795e561862",
+      "container_name": "/mesos-b3e48670-9810-4c80-93dc-e45ffd485a00",
+      "source": "stdout",
+      "log": "    \"${catalina.home}/lib/*.jar\"",
+      "mesos_framework": "marathon",
+      "app": "jira",
+      "mesos_task_id": "jira.instance-ab27d9c9-850c-11ec-a8d1-024295fdd3e6._app.1",
+      "host": "mesosslave-private-04610d00f6a6254ec",
+      "msec": "512"
+    }
+  },
+  "expected": {
+    "timestamp": 1643905043.035,
+    "_fluentd_tag": "docker.9ee424d12013",
+    "_container_id": "9ee424d120137232b53bbaa678097b71e50e69de148e2ee4b77a94795e561862",
+    "_container_name": "/mesos-b3e48670-9810-4c80-93dc-e45ffd485a00",
+    "_source": "stdout",
+    "_mesos_framework": "marathon",
+    "_app": "jira",
+    "_mesos_task_id": "jira.instance-ab27d9c9-850c-11ec-a8d1-024295fdd3e6._app.1",
+    "host": "mesosslave-private-04610d00f6a6254ec",
+    "_msec": "512",
+    "short_message": "    \"${catalina.home}/lib/*.jar\"",
+    "level": 6
+  }
+}

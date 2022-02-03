@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name    = "fluent-plugin-gelf"
-  spec.version = "0.2.4"
+  spec.version = "0.2.5"
   spec.authors = ["Funding Circle"]
   spec.email   = ["engineering+fluent-plugin-gelf@fundingcircle.com"]
 
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "oj", "~> 3.3.10"
-  spec.add_development_dependency "bundler", "~> 2.1.4"
+  spec.add_development_dependency "bundler", "~> 2.2.32"
   spec.add_development_dependency "rake", ">= 12.3.3"
   spec.add_development_dependency "test-unit", "~> 3.0"
   spec.add_development_dependency "test-unit-rr", "~> 1.0.5"
