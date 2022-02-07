@@ -1,0 +1,31 @@
+{
+  "event": {
+    "tag": "docker.9ee424d12013",
+    "time": "2022-02-03 16:17:23.034547719",
+    "record": {
+      "container_id": "4788c604bce1d6fcd8365465a9d3e68c9f38629fedcc1a4ad1ccfa075ab64298",
+      "container_name": "/mesos-9e0577fe-26b0-43f2-8f4a-7462c51f9c28",
+      "source": "stdout",
+      "log": "[65, 66]",
+      "mesos_framework": "chronos",
+      "app": "analyst-data-scripts-ca-collections-comms-collection-comms-core-python-20220207-111217-021377",
+      "mesos_task_id": "ct:1644232337792:0:analyst-data-scripts-ca-collections-comms-collection-comms-core-python-20220207-111217-021377",
+      "host": "mesosslave-private-0077ac2089c041c6a",
+      "msec": "981"
+    }
+  },
+  "expected": {
+    "timestamp": 1643905043.035,
+    "_fluentd_tag": "docker.9ee424d12013",
+    "_container_id": "4788c604bce1d6fcd8365465a9d3e68c9f38629fedcc1a4ad1ccfa075ab64298",
+    "_container_name": "/mesos-9e0577fe-26b0-43f2-8f4a-7462c51f9c28",
+    "_source": "stdout",
+    "_mesos_framework": "chronos",
+    "_app": "analyst-data-scripts-ca-collections-comms-collection-comms-core-python-20220207-111217-021377",
+    "_mesos_task_id": "ct:1644232337792:0:analyst-data-scripts-ca-collections-comms-collection-comms-core-python-20220207-111217-021377",
+    "host": "mesosslave-private-0077ac2089c041c6a",
+    "_msec": "981",
+    "short_message": "[65, 66]",
+    "level": 6
+  }
+}

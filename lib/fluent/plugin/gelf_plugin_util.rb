@@ -37,11 +37,11 @@ module Fluent
     def merge_inner_json(record, key)
       return record unless record[key]
       json = Oj.load(record[key].strip)
-      return record unless json
+      return record unless json.is_a?(Hash)
       json["host"] = record["host"] # preserve host
       record.delete(key)
       record.merge(json)
-    rescue Oj::ParseError, EncodingError, IndexError
+    rescue Oj::ParseError, EncodingError
       record
     end
 
